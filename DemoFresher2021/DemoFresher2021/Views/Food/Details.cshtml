@@ -1,0 +1,61 @@
+﻿@model DemoFresher2021.Models.Food
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Food</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CateId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CateId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+        <dd>
+            <img width="250" height="250" src="@("/Images/FoodImg/"+Model.Image)" asp-append-version="true" />
+            @*<img width="250" height="250" src="@Url.Content(Model.Image)" />*@
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FoodID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
